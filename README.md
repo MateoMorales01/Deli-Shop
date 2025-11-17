@@ -32,10 +32,10 @@ The application guides the user through detailed choices for their sandwich:
 * **Toppings & Sauces:** Allows multiple selections of regular toppings and sauces, and prompts for **extra sauce**.
 
   Drink customization:
-* Pepsi only franchise
+* Pepsi franchise only (No exceptions)
 
   Chips customization:
-  Chips range from Cheetos, Dorritos, and Lays Products!
+  *Chips range from Cheetos, Dorritos, and Lays Products!
 
 The beginning startup to Provision Labs:
 <img width="1738" height="289" alt="Screenshot 2025-11-17 005013" src="https://github.com/user-attachments/assets/d004a824-d1a6-4977-9866-3f7a1d7ff8a0" />
