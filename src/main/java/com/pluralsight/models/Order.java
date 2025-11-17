@@ -24,7 +24,6 @@ public class Order {
                 .mapToDouble(MenuItem::getPrice)
                 .sum();
     }
-    //this.menuItems = new ArrayList<>(); <-- for constructor
 
     @Override
     public String toString() {

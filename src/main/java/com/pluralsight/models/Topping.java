@@ -12,15 +12,6 @@ public class Topping {
         this.isExtra = isExtra;
     }
 
-    public Topping(String name, String type) {
-        this.name = name.toLowerCase();
-        this.type = type.toLowerCase();
-    }
-
-    public String getName() {
-        return name;
-    }
-
     public String getType() {
         return type;
     }

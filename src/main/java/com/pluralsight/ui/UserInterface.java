@@ -67,7 +67,7 @@ public class UserInterface {
         return scanner.nextLine().toLowerCase().trim();
     }
 
-    public String promptForSize() {
+    public String addSize() {
 
         System.out.println("=================================================");
         System.out.println("Please choose a size:");
@@ -77,7 +77,7 @@ public class UserInterface {
         return scanner.nextLine().trim();
     }
 
-    public boolean promptForToasted() {
+    public boolean makeToasted() {
         System.out.println("=================================================");
         System.out.print("Toasted? (yes or no): ");
         System.out.println("\n=================================================");
@@ -94,7 +94,7 @@ public class UserInterface {
         }
     }
 
-    public List<String> promptForMeats() {
+    public List<String> addMeats() {
         List<String> meats = new ArrayList<>();
 
         System.out.println("=================================================");
@@ -114,7 +114,7 @@ public class UserInterface {
         }
     }
 
-    public boolean promptForExtraMeat() {
+    public boolean addExtraMeat() {
         System.out.println("=================================================");
         System.out.print("Would you like extra meat? (yes/no): ");
         System.out.println("\n=================================================");
@@ -131,7 +131,7 @@ public class UserInterface {
         }
     }
 
-    public List<String> promptForCheeses() {
+    public List<String> addCheese() {
         List<String> cheeses = new ArrayList<>();
         System.out.println("=================================================");
         System.out.println("Add cheese (type 'done' when finished):");
@@ -150,7 +150,7 @@ public class UserInterface {
         }
     }
 
-    public boolean promptForExtraCheese() {
+    public boolean addExtraCheese() {
         System.out.println("=================================================");
         System.out.print("Would you like extra cheese? (yes/no): ");
         System.out.println("\n=================================================");
@@ -167,7 +167,7 @@ public class UserInterface {
         }
     }
 
-    public List<String> promptForRegularToppings() {
+    public List<String> addToppings() {
         List<String> toppings = new ArrayList<>();
         System.out.println("============================================================================================");
         System.out.println("Add regular toppings (type 'done' when finished):");
@@ -186,7 +186,7 @@ public class UserInterface {
         }
     }
 
-    public List<String> promptForSauces() {
+    public List<String> addSauces() {
         List<String> sauces = new ArrayList<>();
         System.out.println("===========================================================================");
         System.out.println("Add sauces (type 'done' when finished):");
@@ -205,9 +205,9 @@ public class UserInterface {
         }
     }
 
-    public boolean extraSauce() {
+    public boolean addExtraSauce() {
         System.out.println("=================================================");
-        System.out.println("Did you want Extra cheese? (yes/no): ");
+        System.out.println("Do you want Extra sauce? (yes/no): ");
         System.out.println("\n=================================================");
 
         String choice = scanner.nextLine().toLowerCase();
@@ -221,7 +221,7 @@ public class UserInterface {
         }
     }
 
-    public String promptForDrinkSize() {
+    public String addDrinkSize() {
         System.out.println("=================================================");
         System.out.println("Drink sizes: small, medium, large, xlarge");
         System.out.print("Please enter drink size: ");
@@ -229,7 +229,7 @@ public class UserInterface {
         return scanner.nextLine().toLowerCase().trim();
     }
 
-    public String promptForDrinkFlavor() {
+    public String addDrinkFlavor() {
         System.out.println("=================================================");
         System.out.println("We are a Pepsi only company");
         System.out.print("Enter pepsi product: ");
@@ -237,7 +237,7 @@ public class UserInterface {
         return scanner.nextLine().toLowerCase().trim();
     }
 
-    public String promptForChipsType() {
+    public String addChips() {
         System.out.println("================================================================================================");
         System.out.println("Available chips:  hot cheetos, doritos, lays original, lays jalapeno, cool ranch doritos");
         System.out.print("Enter chips type: ");

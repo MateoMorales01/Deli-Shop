@@ -9,7 +9,6 @@ public class Sandwich extends MenuItem {
     private String size;
     private boolean toasted;
 
-    // Constructor matching App.java's call: new Sandwich(bread, size, toasted)
     public Sandwich(String bread, String size, boolean toasted) {
         this.bread = bread;
         this.size = size;
@@ -53,12 +52,10 @@ public class Sandwich extends MenuItem {
         this.toasted = toasted;
     }
 
-    // Price calculation
     @Override
     public double getPrice() {
         double price = 0;
 
-        // Base price by size
         switch (size) {
             case "4":
                 price += 5.50;
@@ -71,11 +68,9 @@ public class Sandwich extends MenuItem {
                 break;
         }
 
-        // Topping costs
         for (Topping topping : toppings) {
             String type = topping.getType();
 
-            // MEAT pricing
             if (type.equals("meat")) {
                 if (size.equals("4")) {
                     price += 1.00;
@@ -85,7 +80,6 @@ public class Sandwich extends MenuItem {
                     price += 3.00;
                 }
 
-                // Extra meat surcharge
                 if (topping.isExtra()) {
                     if (size.equals("4")) {
                         price += 0.50;
@@ -97,7 +91,6 @@ public class Sandwich extends MenuItem {
                 }
             }
 
-            // CHEESE pricing
             else if (type.equals("cheese")) {
                 if (size.equals("4")) {
                     price += 0.75;
@@ -107,7 +100,6 @@ public class Sandwich extends MenuItem {
                     price += 2.25;
                 }
 
-                // Extra cheese surcharge
                 if (topping.isExtra()) {
                     if (size.equals("4")) {
                         price += 0.30;
@@ -119,7 +111,6 @@ public class Sandwich extends MenuItem {
                 }
             }
 
-            // SAUCE and REGULAR toppings are free (no pricing)
         }
 
         return price;

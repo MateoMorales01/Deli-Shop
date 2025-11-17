@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import com.pluralsight.data.RecieptManager;
+import com.pluralsight.data.ReceiptManager;
 import com.pluralsight.models.*;
 import com.pluralsight.ui.UserInterface;
 
@@ -17,15 +17,9 @@ public class App {
 
             switch (String.valueOf(homeChoice)) {
 
-
-                // NEW ORDER
-
                 case "1":
                     startNewOrder(ui);
                     break;
-
-
-                // EXIT APP
 
                 case "0":
                     System.out.println("Goodbye!");
@@ -49,17 +43,11 @@ public class App {
 
             switch (String.valueOf(orderChoice)) {
 
-
-                // ADD SANDWICH
-
                 case "1":
                     Sandwich sandwich = buildSandwich(ui);
                     order.addItem(sandwich);
                     System.out.println("Sandwich added!");
                     break;
-
-
-                // ADD DRINK
 
                 case "2":
                     Drink drink = buildDrink(ui);
@@ -67,25 +55,16 @@ public class App {
                     System.out.println("Drink added!");
                     break;
 
-
-                // ADD CHIPS
-
                 case "3":
                     Chips chips = buildChips(ui);
                     order.addItem(chips);
                     System.out.println("Chips added!");
                     break;
 
-
-                // CHECKOUT
-
                 case "4":
                     checkoutOrder(order);
                     ordering = false;
                     break;
-
-
-                // CANCEL ORDER
 
                 case "0":
                     System.out.println("Order cancelled.");
@@ -101,55 +80,43 @@ public class App {
     private static Sandwich buildSandwich(UserInterface ui) {
 
         String bread = ui.breadType();
-        String size = ui.promptForSize();
-        boolean toasted = ui.promptForToasted();
+        String size = ui.addSize();
+        boolean toasted = ui.makeToasted();
 
         Sandwich sandwich = new Sandwich(bread, size, toasted);
 
-        // MEATS
-        for (String meat : ui.promptForMeats()) {
-            boolean extra = ui.promptForExtraMeat();
+        for (String meat : ui.addMeats()) {
+            boolean extra = ui.addExtraMeat();
             sandwich.addTopping(new Topping(meat, "meat", extra));
         }
 
-        // CHEESES
-        for (String cheese : ui.promptForCheeses()) {
-            boolean extra = ui.promptForExtraCheese();
+        for (String cheese : ui.addCheese()) {
+            boolean extra = ui.addExtraCheese();
             sandwich.addTopping(new Topping(cheese, "cheese", extra));
         }
 
-        // REGULAR TOPPINGS
-        for (String topping : ui.promptForRegularToppings()) {
+        for (String topping : ui.addToppings()) {
             sandwich.addTopping(new Topping(topping, "regular", false));
         }
 
-        // SAUCES
-        for (String sauce : ui.promptForSauces()) {
-            sandwich.addTopping(new Topping(sauce, "sauce", false));
+        for (String sauce : ui.addSauces()) {
+            boolean extra = ui.addExtraSauce();
+            sandwich.addTopping(new Topping(sauce, "sauce", extra));
         }
 
         return sandwich;
     }
 
-
-    // BUILD DRINK
-
     private static Drink buildDrink(UserInterface ui) {
-        String size = ui.promptForDrinkSize();
-        String flavor = ui.promptForDrinkFlavor();
+        String size = ui.addDrinkSize();
+        String flavor = ui.addDrinkFlavor();
         return new Drink(size, flavor);
     }
 
-
-    // BUILD CHIPS
-
     private static Chips buildChips(UserInterface ui) {
-        String type = ui.promptForChipsType();
+        String type = ui.addChips();
         return new Chips(type);
     }
-
-
-    // CHECKOUT PROCESS
 
     private static void checkoutOrder(Order order) {
 
@@ -157,9 +124,9 @@ public class App {
         System.out.println(order);
 
         System.out.println("\nSaving receipt...");
-        RecieptManager.saveReceipt(order);
+        ReceiptManager.saveReceipt(order);
 
-        System.out.println("Order complete! Returning to home screen.\n");
+        System.out.println("Order complete! Thank you for choosing Provisions Lab!\n");
     }
 }
 
