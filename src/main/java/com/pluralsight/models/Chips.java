@@ -21,7 +21,8 @@ public class Chips extends MenuItem {
         return 1.5;
     }
 
-    public String tostring() {
+    public String toString() {
         return bagOfChips.substring(0, 1).toUpperCase() + bagOfChips.substring(1) + " - $1.50";
     }
 }
+
